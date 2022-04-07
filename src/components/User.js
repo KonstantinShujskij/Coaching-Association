@@ -18,6 +18,7 @@ export default function User({user, parent, isUpBtn, isDownBtn}) {
         e.preventDefault(); 
 
         if(dragTrener) {
+            if(user.name === dragTrener.name) { return; }
             if(isParent(user, dragTrener.name)) { return; }
             if(isDeepChild(treners, user.name, dragTrener.name)) { return; }
 
